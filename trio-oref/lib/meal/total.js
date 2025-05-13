@@ -44,7 +44,7 @@ function recentCarbs(opts, time) {
     treatments.forEach(function(treatment) {
         var now = time.getTime();
         // consider carbs from up to 6 hours ago in calculating COB
-        var carbWindow = now - 6 * 60*60*1000;
+        var carbWindow = now - 3.5 * 60*60*1000;
         var treatmentDate = new Date(tz(treatment.timestamp));
         var treatmentTime = treatmentDate.getTime();
         if (treatmentTime > carbWindow && treatmentTime <= now) {
